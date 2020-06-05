@@ -5,6 +5,8 @@
 *{
     margin: 0;
     padding: 0;
+/*Esse comando faz com que todo padding entre somente até a borda da box*/
+    box-sizing: border-box;
 }
 html{
     font-family: Roboto, sans-serif;

@@ -26,20 +26,59 @@
                 </a>
             </header>
             
-            <main>
-                <h1>Seu marketplace de coleta de resíduos</h1>
-            
-                <p>
-                    Ajudando pessoas a encontrarem pontos de coleta de forma eficiente
-                </p>
-                <a href="#">
-                    <span></span>
-                       <strong>
-                        Pesquisar pontos de coleta
-                       </strong>
-                </a>
+           <form action="">
+               <h1>Cadastro do ponto de coleta</h1>
 
-            </main>
+            <!--FIELDSET agrupa elementos dentro de um formulario -->
+            <!--DADOS DO FORMULARIO-->
+               <fieldset>
+                    <legend>
+                        <h2> Dados da entidade </h2>
+                    </legend>
+
+                    <div class="field">
+                        <label for="name">Nome da entidade</label>
+                        <input type="text" name="name">
+
+                        <div class="field-group">
+                            <div class="field">
+                                <label for="address">Endereço</label>
+                                <input type="text" name="address">
+                            </div>
+                            <div class="field">
+                                <label for="address2">Número/Complemento</label>
+                                <input type="text" name="address2">
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <div class="field">
+                                <label for="state">Estado</label>
+                                <select name="uf">
+                                    <option value="">Selecione o estado</option>
+                                </select>                              
+                            </div>
+                            <div class="field">
+                                <label for="city">Cidade</label>
+                                <select name="city" disabled>
+                                    <option value="">Selecione a cidade</option>
+                                </select>
+                            </div>
+                           
+                        </div>
+                    </div>
+               </fieldset>
+
+               <!--ICONES PARA CLICAR-->
+               <fieldset>
+                    <legend>
+                        <h2>Itens de coleta</h2>
+                    </legend>
+               </fieldset>
+
+               <button type="submit">
+                    Cadastrar ponto de coleta
+               </button>
+           </form>
            
         
     </div>
