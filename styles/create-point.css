@@ -1,7 +1,10 @@
+body{
+    background-color: rgb(225, 250, 218);
+}
+
 #page-create-point{
     width: 90%;
     max-width: 1100px;
-
     margin: 0 auto; 
 }
 
