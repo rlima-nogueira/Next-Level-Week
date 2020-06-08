@@ -20,6 +20,16 @@
     #page-home main{
         align-items: center;
     }
+
+ 
+    #page-search-results .cards {
+        grid-template-columns: 1fr;
+    }
+
+    #page-create-point .items-grid{
+        grid-template-columns: 1fr;
+    }
+
 }
 
 @media(min-width: 1700px){
