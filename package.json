@@ -4,7 +4,7 @@
   "description": "<h1 align=\"center\">\r <img src=\"https://ik.imagekit.io/twayhlwajl/logo_-XSMiBj1i.svg\"> \r </h1>",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "nodemon src/server.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,8 @@
   "homepage": "https://github.com/rlima-nogueira/Next-Level-Week#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }
