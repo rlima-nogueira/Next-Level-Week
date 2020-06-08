@@ -1,0 +1,22 @@
+{
+  "name": "next-level-week",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">\r <img src=\"https://ik.imagekit.io/twayhlwajl/logo_-XSMiBj1i.svg\"> \r </h1>",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rlima-nogueira/Next-Level-Week.git"
+  },
+  "author": "Rafaela Lima Nogueira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rlima-nogueira/Next-Level-Week/issues"
+  },
+  "homepage": "https://github.com/rlima-nogueira/Next-Level-Week#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
