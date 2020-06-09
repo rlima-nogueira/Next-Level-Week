@@ -4,12 +4,14 @@
 
 <p align="justify">Aplicativo ECOLETA desenvolvido na semana <strong>NEXT LEVEL WEEK</strong> promovida pela RocketSeat.</p>
 
-<p align="Justify"> Nesta aplicação foram usadas até agora as seguintes tecnologias: </p>
+<p align="justify"> Nesta aplicação foram usadas as seguintes tecnologias: </p>
 
 <li> HTML
 <li> CSS
 <li> JavaScript
 <li> Node.js
 <li> Express
-
+<li> Nunjucks
  
+
+ <p align="justify"> O projeto está responsivo.</p>
