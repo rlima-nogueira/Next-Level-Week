@@ -18,14 +18,8 @@
 
     <div id="page-create-point">
                 
-            <!--Cabeçalho SITE-->
-            <header>
-                <img src='/assets/icones/logo.svg' alt="Logomarca Ecoleta" >
-                <a href="index.html">
-                    <span></span>
-                    Voltar para o início
-                </a>
-            </header>
+        <!-- inclui a página "page-header" atraves do Nunjuncks-->
+         {% include "partials/page-header.html" %}
             
            <form action="#">
                <h1>Cadastro do ponto de coleta</h1>
@@ -76,6 +70,7 @@
                <fieldset>
                     <legend>
                         <h2>Itens de coleta</h2>
+                        <span>Selecione um ou mais itens abaixo:</span>
                     </legend>
 
                     <div class="items-grid">

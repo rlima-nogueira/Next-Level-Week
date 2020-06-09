@@ -22,14 +22,14 @@
             <!--Cabeçalho SITE-->
             <header>
                 <img src='/assets/icones/logo.svg' alt="Logomarca Ecoleta">
-                <a href="/create-point.html">
+                <a href="/create-point">
                     <span></span>
                     Cadastre um ponto de coleta
                 </a>
             </header>
             
             <main>
-                <h1>Seu marketplace de coleta de resíduos</h1>
+                <h1>{{ title }}</h1>
             
                 <p>
                     Ajudando pessoas a encontrarem pontos de coleta de forma eficiente
@@ -47,22 +47,7 @@
     </div>
 
 
-    <div id="modal" class="hide">
-        <div class="content">
-            <div class="header">
-                <h1>Pontos de coleta</h1>
-                <a href="">Fechar</a>
-            </div>
-            <form action="/search-results.html" >
-                <label for="search">Busque a Cidade</label>
-                <div class="search-field">
-                    <input type="text" name="search" placeholder="Pesquise o nome da cidade">
-                    <button>
-                        <img src="/assets/icones/search.svg" alt="Buscar">
-                    </button>
-                </div>
-            </form>
-        </div>
+  {%include "partials/modal.html"%}}
 
     <script src="/scripts/index.js"></script>
 </body>

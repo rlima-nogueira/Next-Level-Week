@@ -1,5 +1,5 @@
 body{
-    background-color: rgb(225, 250, 218);
+    background-color:  rgb(241, 202, 230, 0.243);
 }
 
 #page-create-point{
@@ -53,10 +53,20 @@ form fieldset {
 
 form legend{
     margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
 }
 
 form legend h2{
     font-size: 24px;
+}
+
+form legend span{
+    font-size: 14px;
+    text-align: center;
+    color: var(--title-color);
 }
 
 form .field {
