@@ -4,6 +4,9 @@ const express = require("express");
 //executo a variavel que defini em cima
 const server = express();
 
+//pegar o objeto do banco de dados
+const db = require("./database/db.js");
+
 //faz o servidor enxergar a pasta public
 server.use(express.static("public"));
 
