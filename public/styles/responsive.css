@@ -1,3 +1,81 @@
+@media(max-width: 565px){
+    #page-home{
+        background-position-x: 30vw;
+    }
+
+    #page-home .content{
+        align-items: center;
+        text-align: center;
+    }
+
+    #page-home .content h1{
+        font-size: 32px;
+    }
+    #page-home main p{
+        font-size: 16px;
+        line-height: 20px;
+        margin-top: 24px;
+    }
+
+    #page-home main a{
+        width: 100%;
+        max-width: 240px;
+        height: 42px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+        background-color: var(--primary-color);
+        transition: 400ms;
+        color: white;
+    }
+
+    #page-home main a:hover{
+        background-color: #65d197;
+    }
+    
+    #page-home main a span{
+        width: 40px;
+        height: 40px;
+        
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    
+        background-color: rgba(0,0,0,0.08);
+    
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #page-home main a span::after{
+        content: "";
+        background-image: url('../assets/icones/search.svg');
+        width: 20px;
+        height: 20px;   
+    }
+    
+    #page-home main a strong{
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    #page-home header a{
+        position: absolute;
+        bottom: 20px;
+
+        left: 30%;
+        transform: translateX(-50%);
+    }
+
+    #page-home main{
+        align-items: center;
+    }
+
+
+}
+
 
 @media(max-width: 900px){
     #page-home{

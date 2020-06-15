@@ -12,6 +12,6 @@
 <li> Node.js
 <li> Express
 <li> Nunjucks
- 
+<li> SQLite
 
  <p align="justify"> O projeto está responsivo.</p>
