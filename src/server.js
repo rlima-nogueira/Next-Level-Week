@@ -10,6 +10,8 @@ const db = require("./database/db.js");
 //faz o servidor enxergar a pasta public
 server.use(express.static("public"));
 
+// habilitar o uso do req.body na nossa aplicação
+server.use(express.urlencoded({ extended: true }))
 
 //utilizando template engine nunjucks
 const nunjunks = require("nunjucks");
@@ -28,12 +30,68 @@ server.get("/", (req, res) =>{
 
 // redireciona o servidor para o create-point
 server.get("/create-point", (req, res) =>{
+    // req.query:  Query Strings da nossa url
+
+    // console.log (req.query);
+
     return res.render("create-point.html");
+});
+
+server.post("/savepoint" , (req, res) => {
+
+    // req.body == o corpo do nosso formulário;
+    console.log(req.body);
+   
+
+  // inserir dados no banco de dados
+        const query = `INSERT INTO places (
+            image,
+            name,
+            address,
+            address2,
+            state,
+            city,
+            items 
+        ) VALUES (?, ?, ?, ?, ?, ?, ?);        
+        `          
+    // array para cadastrar os valores 
+    const values = [
+        req.body.image,
+        req.body.name,
+        req.body.address,
+        req.body.address2,
+        req.body.state,
+        req.body.city,
+        req.body.items
+    ];
+    
+    function afterInsertData(err){
+         // essa função testa se há erros no cadastro, caso houver, já chama o console.log mostrando o erro, se não dá a msg de sucesso.         
+         if (err){
+            return console.log(err);
+        }
+        console.log("Itens cadastrados com sucesso!"); 
+        console.log(this);
+
+        
+        return res.render("create-point.html", { saved: true });
+    }
+    db.run(query, values, afterInsertData);
+    
 });
 
 // redireciona o servidor para o search-results
 server.get("/search", (req, res) =>{
-    return res.render("search-results.html");
+    //pegar os dados do banco de dados
+    db.all(`SELECT * FROM places`, function(err, rows){
+    if (err){
+        return console.log(err);
+    }
+    //conta o total de elementos do array
+    const total = rows.length;
+    //mostrar a página HTML com os dados que são puxados do banco de dados
+    return res.render("search-results.html", {places: rows, total});
+    })    
 });
 
 

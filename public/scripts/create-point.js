@@ -4,12 +4,12 @@ function populationUFs (){
     const ufSelect = document.querySelector("[name=uf]");
 
     fetch("https://servicodados.ibge.gov.br/api/v1/localidades/estados")
-        .then(response => response.json()) //função anonima que retorna o json
-        .then(states => { //retorna os estados do json
+        .then(response => response.json() ) //função anonima que retorna o json
+        .then( states => { //retorna os estados do json
             
-            for(const state of states){ //Esse FOR vai buscar os estados e jogar dentro da variavel state que tá 
-                ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>` //coloca no HTML várias opções
-            }
+        for(const state of states){ //Esse FOR vai buscar os estados e jogar dentro da variavel state 
+         ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>` //coloca no HTML várias opções
+        }
         
         });
 }
@@ -20,30 +20,27 @@ function getCities(event){
     const citySelect = document.querySelector("[name=city]");
     const stateInput = document.querySelector("[name=state]");
 
-
-    //pega o valor da cidade e popula no link da api
+    //pega o valor do estado e popula no link da api
     const ufValue = event.target.value; 
 
     const indexOfSelectedState = event.target.selectedIndex;
-    stateInput.value = event.target.options[indexOfSelectedState];
+    stateInput.value = event.target.options[indexOfSelectedState].text;
 
     const url = `https://servicodados.ibge.gov.br/api/v1/localidades/estados/${ufValue}/municipios`;
 
-    citySelect.innerHTML = "";
-    citySelect.disabled = `<option value="">Digite sua cidade</option>;`
+    citySelect.innerHTML = `<option value>Selecione sua cidade</option>;`;
+    citySelect.disabled = true;
 
     fetch(url)
         .then(response => response.json()) //função anonima que retorna o json
-        .then(cities => { //retorna os estados do json
+        .then(cities => { //retorna as cidades do json
             
-            for(const city of cities){ //Esse FOR vai buscar os estados e jogar dentro da variavel state que tá 
-                citySelect.innerHTML += `<option value="${city.id}">${city.nome}</option>` //coloca no HTML várias opções
+            for(const city of cities){ //Esse FOR vai buscar as cidades e jogar dentro da variavel city
+                citySelect.innerHTML += `<option value="${city.nome}">${city.nome}</option>` //coloca no HTML várias opções
             }
 
         citySelect.disabled = false; 
         });
-
-
 }
 
 
@@ -60,7 +57,7 @@ for (const item of itemsToCollect){
     item.addEventListener("click", hadleSelectedItem);
 }
 
-const collectedItems = document.querySelector("input[name=items]");
+const collectedItems = document.querySelector("[name=items]");
 let selectedItens = [];
 
 function hadleSelectedItem (event) {

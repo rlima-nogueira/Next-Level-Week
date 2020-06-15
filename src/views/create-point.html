@@ -21,7 +21,8 @@
         <!-- inclui a página "page-header" atraves do Nunjuncks-->
          {% include "partials/page-header.html" %}
             
-           <form action="#">
+           <form action="/savepoint" method="POST">
+           {# <form action="#"> #}
                <h1>Cadastro do ponto de coleta</h1>
 
             <!--FIELDSET agrupa elementos dentro de um formulario -->
@@ -36,22 +37,22 @@
       
                         <div class="field">
                             <label for="name">Nome da entidade*</label>
-                            <input type="text" name="name" required="">
+                            <input type="text" name="name" required>
                         </div>
                             <div class="field">
-                            <label for="name">Imagem da entidade*</label>
-                            <input type="text" name="imagem" placeholder="https://" required="">
+                            <label for="image">Imagem da entidade*</label>
+                            <input type="text" name="image" placeholder="https://" required>
                         </div>
                     </div>
 
                         <div class="field-group">
                             <div class="field">
                                 <label for="address">Endereço*</label>
-                                <input type="text" name="address" required>
+                                <input type="text" name="address" placeholder="Rua/Av." required>
                             </div>
                             <div class="field">
                                 <label for="address2">Número e/ou Complemento*</label>
-                                <input type="text" name="address2">
+                                <input type="text" name="address2" placeholder="Ex.: nº 10, CEP 00000-000" required>
                             </div>
                         </div>
                         <div class="field-group">
@@ -59,8 +60,9 @@
                                 <label for="state">Estado*</label>
                                 <select name="uf" required>
                                     <option value="">Selecione o estado*</option>
-                                    <input type="hidden" name="state">
-                                </select>                              
+                                </select>      
+
+                                <input type="hidden" name="state" value="">                        
                             </div>
                             <div class="field">
                                 <label for="city">Cidade*</label>
@@ -81,29 +83,29 @@
                     </legend>
 
                     <div class="items-grid">
-                        <li data-id="1">
+                        <li data-id="Lâmpadas">
                             <img src="/assets/icones/lampadas.svg" alt="Imagem de uma lâmpada">
-                            <span>Lâmpadas</span>
+                            <span> Lâmpadas </span>
                         </li>
-                        <li data-id="2">
+                        <li data-id="Pilhas e Baterias">
                             <img src="/assets/icones/baterias.svg" alt="Imagem de uma bateria">
-                            <span>Pilhas e Baterias</span>
+                            <span> Pilhas e Baterias </span>
                         </li>
-                        <li data-id="3">
+                        <li data-id="Papéis e papelão">
                             <img src="/assets/icones/papeis-papelao.svg" alt="Imagem de papéis">
-                            <span>Papéis e papelão </span>
+                            <span> Papéis e papelão </span>
                         </li>
-                        <li data-id="4">
+                        <li data-id="Resíduos Eletrônicos">
                             <img src="/assets/icones/eletronicos.svg" alt="Imagem de resíduos eletrônicos">
-                            <span>Resíduos Eletrônicos</span>
+                            <span> Resíduos Eletrônicos </span>
                         </li>
-                        <li data-id="5">
+                        <li data-id="Resíduos Orgânicos">
                             <img src="/assets/icones/organicos.svg" alt="Imagem de resíduos orgânicos">
-                            <span>Resíduos Orgânicos</span>
+                            <span> Resíduos Orgânicos </span>
                         </li>
-                        <li data-id="6">
+                        <li data-id="Óleo de Cozinha">
                             <img src="/assets/icones/oleo.svg" alt="Imagem de um copo com óleo de cozinha">
-                            <span>Óleo de Cozinha</span>
+                            <span> Óleo de Cozinha </span>
                         </li>
                     </div>
 

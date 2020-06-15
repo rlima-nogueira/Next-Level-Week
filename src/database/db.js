@@ -6,21 +6,26 @@ const db = new sqlite3.Database("./src/database/database.db");
 
 //exporta o objeto db para conseguir puxar com require dentro do server.js
 module.exports = db; 
+
+// -------------------------- //
 // utilizando o objeto para as operações
-// db.serialize(() => {
+
+db.serialize(() => {
+
+
 //     // criar uma tabela dentro do banco de dados
-//         db.run(`
-//             CREATE TABLE IF NOT EXISTS places (
-//                 id INTEGER PRIMARY KEY AUTOINCREMENT,
-//                 image TEXT,
-//                 name TEXT,
-//                 address TEXT,
-//                 address2 TEXT, 
-//                 state TEXT,
-//                 city TEXT, 
-//                 items TEXT
-//             );
-//         `);
+        db.run(`
+            CREATE TABLE IF NOT EXISTS places (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                image TEXT,
+                name TEXT,
+                address TEXT,
+                address2 TEXT, 
+                state TEXT,
+                city TEXT, 
+                items TEXT
+            );
+        `);
 
 //     // Inserir dados na tabela
 //         const query = `INSERT INTO places (
@@ -67,14 +72,14 @@ module.exports = db;
 //     //     console.log(rows);
 //     // })
 
-//     // // Deletar dados na tabela
-//     // db.run(`DELETE FROM places WHERE id = ?`, [1], function (err){
-//     //     if (err){
-//     //         return console.log(err);
-//     //     }
+    // // Deletar dados na tabela
+    // db.run(`DELETE FROM places WHERE id = ?`, [2], function (err){
+    //     if (err){
+    //         return console.log(err);
+    //     }
 
-//     //     console.log("Registro deletado com sucesso!")
-//     // });
+    //     console.log("Registro deletado com sucesso!")
+    // });
 
         
-// })
+})
