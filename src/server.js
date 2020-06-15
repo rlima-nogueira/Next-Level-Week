@@ -34,7 +34,7 @@ server.get("/create-point", (req, res) =>{
 
     // console.log (req.query);
 
-    return res.render("create-point.html", {saved: true} );
+    return res.render("create-point.html", {saved: true});
 });
 
 server.post("/savepoint" , (req, res) => {

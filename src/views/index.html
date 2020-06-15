@@ -46,8 +46,11 @@
         </div>
     </div>
 
+ {% block modal %}
+      {% include "partials/modal.html"%}
+ {% endblock modal %}
 
-  {% include "partials/modal.html"%}
+
 
     <script src="/scripts/index.js"></script>
 </body>

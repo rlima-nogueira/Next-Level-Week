@@ -10,8 +10,7 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/create-point.css">
 
-    <link rel="stylesheet" href="styles/modal.css">
-    
+    <link rel="stylesheet" href="styles/modal-point-created.css">
     <link rel="stylesheet" href="styles/responsive.css">
     
 </head>
@@ -22,14 +21,8 @@
                 
         <!-- inclui a página "page-header" atraves do Nunjuncks-->
          {% include "partials/page-header.html" %}
-
-         {% if saved %}
-            {% include "partials/point-created.html" %}
-         {% endif %}
-         
            <form action="/savepoint" method="POST">
-           {# <form action="#"> #}
-               <h1>Cadastro do ponto de coleta</h1>
+            <h1>Cadastro do ponto de coleta</h1>
 
             <!--FIELDSET agrupa elementos dentro de um formulario -->
             <!--DADOS DO FORMULARIO-->
@@ -125,6 +118,12 @@
            
         
     </div>
+
+    {% block modal %}
+        {% if saved %}
+            {% include "partials/point-created.html" %}
+        {% endif %}
+    {% endblock modal %}
 
     <script src="/scripts/create-point.js"></script>
 </body>
