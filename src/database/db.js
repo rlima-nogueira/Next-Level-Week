@@ -14,18 +14,18 @@ db.serialize(() => {
 
 
 //     // criar uma tabela dentro do banco de dados
-        db.run(`
-            CREATE TABLE IF NOT EXISTS places (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                image TEXT,
-                name TEXT,
-                address TEXT,
-                address2 TEXT, 
-                state TEXT,
-                city TEXT, 
-                items TEXT
-            );
-        `);
+        // db.run(`
+        //     CREATE TABLE IF NOT EXISTS places (
+        //         id INTEGER PRIMARY KEY AUTOINCREMENT,
+        //         image TEXT,
+        //         name TEXT,
+        //         address TEXT,
+        //         address2 TEXT, 
+        //         state TEXT,
+        //         city TEXT, 
+        //         items TEXT
+        //     );
+        // `);
 
 //     // Inserir dados na tabela
 //         const query = `INSERT INTO places (
@@ -72,8 +72,8 @@ db.serialize(() => {
 //     //     console.log(rows);
 //     // })
 
-    // // Deletar dados na tabela
-    // db.run(`DELETE FROM places WHERE id = ?`, [2], function (err){
+    // Deletar dados na tabela
+    // db.run(`DELETE FROM places `,  function (err){
     //     if (err){
     //         return console.log(err);
     //     }
